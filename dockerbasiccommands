@@ -1,0 +1,89 @@
+
+->DOCKER - container, make image of os like ubuntu
+
+->VIRTUAL BOX VS DOCKER
+- VB install whole os which involve wastage of resources
+- DOCKER clone only image of os(uses kernel of your pc but uses image of ubuntu if ubuntu install in DOCKER),light weight 
+  container, we can puch our container in the docker registory(i.e hub.docker.com LIKE GITHUB)
+
+->some commands
+- docker run -it ubuntu
+- uname(LINUX)
+- exit (for exit)
+- docker pull node
+- docker run -it node
+
+To make your container
+- cd Coding
+- mkdir my-app-node
+- cd my-node-app
+- code . (to open in vs code)
+
+
+- make simple node server in vs code
+  // 1st way
+-- create file name Dockerfile
+   Dockerfile code: 
+
+   FROM node:latest
+   COPY index.js /home/app/index.js
+   COPY package.json /home/app/package.json
+   WORKDIR /home/app/
+   EXPOSE 9000
+   RUN npm install(to create node modules)
+   CMD ["node", "index"] 
+
+
+   // 2nd way 
+-- create file name Dockerfile
+   Dockerfile code: 
+
+   FROM node:latest
+   COPY . /home/app
+   WORKDIR /home/app/
+   EXPOSE 9000
+   RUN npm install(to create node modules)
+   CMD ["node", "index"] 
+-- create file name dockerignore
+   node_modules/
+
+-- to build container in vs code terminal write commands:
+   - docker build -t(stands for tag) myapp .
+
+-- to run our image go in terminal of our computer write command:
+   - docker run -p 3000(local machine port):9000(image port) myapp  
+     recommended to write docker run -p 9000:9000 myapp
+
+     NOW, IMAGE CREATED SUCCESSFULLY
+
+
+-> HOW TO PUSH CONTAINER IN DOCKER REGISTERY
+
+   create account on hub.docker.com
+   in vs code terminal write: 
+   - docker build -t rahul1841(username)/mynodeapp .
+   in pc terminal:
+   - docker push rahul1841/mynodeapp
+
+    PUSH SUCCESSFULLY
+
+-> HOW TO RUN THIS IMAGE :
+   in pc terminal write:
+   -docker run -it -p 9000:9000 rahul1841(piyushgargdev)/mynodeapp
+
+-> AFTER DOING WORK DELETE IMAGES:
+   how to do from terminal:
+
+   to remove container: 
+   - docker ls
+   - docker stop id(id of image)
+   - docker container rm id
+   to remove images:
+   - docker images // docker image ls
+   - docker image rm id
+   - to delete all images in one go in docker dekstop and delete all 
+
+
+
+
+
