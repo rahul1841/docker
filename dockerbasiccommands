@@ -1,4 +1,7 @@
 
+VIDEO -1
+
+
 ->DOCKER - container, make image of os like ubuntu
 
 ->VIRTUAL BOX VS DOCKER
@@ -82,6 +85,42 @@ To make your container
    - docker images // docker image ls
    - docker image rm id
    - to delete all images in one go in docker dekstop and delete all 
+
+
+
+
+
+VIDEO- 2
+
+-> docker volume is permanent storage which we can bind  with our container so our container have permanent storage
+
+
+// 1st way
+
+- make one directory app and open in vscode
+in computer terminal:
+- docker run -it node:latest
+- .exit
+- docker container ls -a
+- docker run -it -v C:\\Users\\91600\\Desktop:/home/app node bash
+- uname
+- ls
+- cd home/
+- ls
+- cd app/
+- ls
+- cd app/
+- ls
+- cat index.js
+- npm i -g nodemon
+- nodemon index.js
+-> if we make changes in index.js file it will get updated in docker
+WE HAVE MOUNTED FOLDER ON OUR LOCAL MACHINE WITH DOCKER CONTAINER
+
+
+// 2nd way
+
+
 
 
 
