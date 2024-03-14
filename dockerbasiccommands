@@ -120,6 +120,30 @@ WE HAVE MOUNTED FOLDER ON OUR LOCAL MACHINE WITH DOCKER CONTAINER
 
 // 2nd way
 
+in pc terminal:
+- docker volume create data
+- docker volume ls
+- docker run -it -v data:/data node bash
+- ls
+- cd data/
+- ls
+- mkdir rahul
+- ls
+
+
+in pc open one more terminal side by:
+- docker run -it -v data:/myapp ubuntu bash
+- ls
+- cd myapp/
+- ls
+
+Now in 1st terminal write: 
+- mkdir rahulkumar
+in 2nd terminal do:
+- ls 
+we get that one more directory is made
+
+// This shows 
 
 
 
